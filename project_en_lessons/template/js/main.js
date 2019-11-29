@@ -22,12 +22,22 @@ if(menu.length){
 		prependTo: ".mobile_menu",
 		closedSymbol: '+',
 		openedSymbol:'-'
-	});
+  });
+  
+    //effect flip 
+    
+    $(".word-card").flip({
+      axis: 'x',
+      trigger: 'click',
+      reverse: true
+    });
 };
 // blog-menu
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"
   // });
+
+  // pokazywanie po 3 kursy na stronie głównej 
  $(".tab-pane .row .col-xl-4").slice(0,3).fadeIn("slow");
   $(".more_courses").click(function(e){
     e.preventDefault();
@@ -37,6 +47,7 @@ if(menu.length){
       $(this).fadeOut("slow");
      }
   });
+
 
 
 // review-active

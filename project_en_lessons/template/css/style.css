@@ -1709,7 +1709,7 @@ h3 {
 
 /* line 43, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget p {
-  color: #C7C7C7;
+  color: #fff;
 }
 
 /* line 46, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
@@ -1753,7 +1753,7 @@ h3 {
 /* line 78, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget ul li a {
   font-size: 16px;
-  color: #BABABA;
+  color: #fff;
   line-height: 42px;
 }
 
@@ -1820,7 +1820,7 @@ h3 {
 /* line 130, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right {
   font-size: 16px;
-  color: #919191;
+  color: #fff;
   margin-bottom: 0;
   font-weight: 400;
 }
@@ -1857,13 +1857,13 @@ h3 {
 /* line 152, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .socail_links ul li a {
   font-size: 18px;
-  color: #C3B2F0;
+  color: #fff;
   line-height: 42px;
   width: 50px;
   height: 50px;
   display: inline-block;
   text-align: center;
-  background: #E74082;
+  background: #4CA2EB;
   border-radius: 3px;
   line-height: 50px !important;
   margin-right: 7px;
@@ -2362,7 +2362,7 @@ h3 {
 }
 
 /* line 22, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_nesletter.scss */
-.subscribe_newsletter .newsletter_form .newsletter_form input {
+.subscribe_newsletter .newsletter_form .newsletter_form input[type="text"] {
   height: 60px;
   width: 70%;
   background: #fff;
@@ -2984,7 +2984,7 @@ h3 {
 
 /* line 44, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
 .courses_details_banner .course_text .rating i {
-  color: #FD8E5E;
+  color: #FFEF02;
   font-size: 17px;
 }
 
@@ -3001,7 +3001,7 @@ h3 {
 
 /* line 58, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
 .courses_details_banner .course_text .hours .video i {
-  color: #AD9EEB;
+  color: #222;
   font-size: 18px;
 }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>DevAlien</title>
     <?php 
     require_once("../hooks/bootstrap_4.php");
     ?> 
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/circle.scss">
 
 </head>
 <body class="text-center" data-gr-c-s-loaded="true">
@@ -47,20 +49,15 @@
                                     <ul id="navigation">
                                         <li><a class="active" href="index.html">Strona Główna</a></li>
                                        <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                        <li><a href="#">Zestawy</a></li>
+                                        <li><a href="about.html">Teachers</a></li>
+                                        <li><a href="contact.html">Kontakt</a></li>
+                                        <li><a href="#">Profil <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="course_details.html">course details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
+                                                <li><a href="blog.html">Ustawienia</a></li>
+                                                <li><a href="single-blog.html">Twoje zestawy</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -371,16 +368,17 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="newsletter_text">
-                        <h3>Subscribe Newsletter</h3>
-                        <p>Your domain control panel is designed for ease-of-use and allows for all aspects of your</p>
+                        <h3>Chcę dostawać newsletter!</h3>
+                        <p>Zapisz mnie do newslettera.</p>
                     </div>
                 </div>
                 <div class="col-xl-5 offset-xl-1 col-lg-6">
                     <div class="newsletter_form">
-                        <h4>Your domain control panel is</h4>
+                        
                         <form action="#" class="newsletter_form">
+                            <input type="checkbox" name=""><h4>Akceptuję politykę prywatności</h4>
                             <input type="text" placeholder="Enter your mail">
-                            <button type="submit">Sign Up</button>
+                            <button type="submit">Zapisz mnie</button>
                         </form>
                     </div>
                 </div>
@@ -397,7 +395,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <!--<img src="img/logo.png" alt="">-->
+                                    <img src="img/logo.png" alt="">
                                 </a>
                             </div>
                             <p>
