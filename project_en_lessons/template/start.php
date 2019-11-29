@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DevAlien</title>
-    <?php 
-    require_once("../hooks/bootstrap_4.php");
-    ?> 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -137,22 +134,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="Web-tab" data-toggle="tab" href="#Web" role="tab"
-                                        aria-controls="design" aria-selected="false">kategoria</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Web-tab1" data-toggle="tab" href="#Web1" role="tab"
-                                        aria-controls="design" aria-selected="false">kategoria</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Web-tab11" data-toggle="tab" href="#Web11" role="tab"
-                                        aria-controls="design" aria-selected="false">kategoria</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Adobe-XD-tab8" data-toggle="tab" href="#Adobe-XD8" role="tab"
-                                        aria-controls="design" aria-selected="false">kategoria</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Adobe-XD-tab9" data-toggle="tab" href="#Adobe-XD9" role="tab"
                                         aria-controls="design" aria-selected="false">kategoria</a>
                                 </li>
                             </ul>

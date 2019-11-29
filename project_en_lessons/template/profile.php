@@ -31,7 +31,7 @@
 <!--header-->
 <header>
         <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
+            <div id="sticky-header" class="main-header-area" style="background: linear-gradient(to right,#34bec8 0%, #f4367d 100%);">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
@@ -43,24 +43,19 @@
                         </div>
                         <div class="col-xl-7 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
-                                <nav>
+                            <nav>
                                     <ul id="navigation">
                                         <li><a  href="index.html">Strona Główna</a></li>
                                        <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a class="active" href="#">pages <i class="ti-angle-down"></i></a>
+                                        <li><a href="#">Zestawy</a></li>
+                                        <li><a href="about.html">Teachers</a></li>
+                                        <li><a href="contact.html">Kontakt</a></li>
+                                        <li><a class="active" href="#">Profil <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="course_details.html">course details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
+                                                <li><a href="blog.html">Ustawienia</a></li>
+                                                <li><a href="single-blog.html">Twoje zestawy</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -79,21 +74,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- header-end -->
+        </div>       
+</header>
+<!-- header-end -->
 
 
- <!-- bradcam_area_start -->
- <div class="courses_details_banner">
-         <div class="container">
-             <div class="row">
-                 <div class="col-xl-6">
-                     
-                 </div>
-             </div>
-         </div>
-    </div>
     <!-- bradcam_area_end -->
     <div class="courses_details_info">
         <div class="container">
@@ -104,7 +89,7 @@
                         <div class="author_info">
                             <div class="auhor_header">
                                 <div class="thumb">
-                                        <img src="img/logo.png" alt="">
+                                        <img src="img/logo.png" alt="" class="avatar img-circle img-thumbnail">
                                 </div>
                                 <div class="name">
                                     <h3>Janusz Nowak</h3>
