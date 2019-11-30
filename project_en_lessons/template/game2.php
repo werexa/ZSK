@@ -81,27 +81,27 @@
                 <div class="col-xl-12 col-lg-12">
                     <h2 class="text-left title">Operating Systems</h2>
                 </div>
-            <!--flashcards-->
-            <div class="col-xl-6 col-lg-6">
+            <!--memorize-->
+            <div class="col-xl-10 col-lg-10">
 
-                <!--carousel-->
-                <div class="owl-carousel">
+                <!--grid-->
+                <div class="grid-container">
                     <!--word-->
-                    <div class="word-card text-center" style="height:16em;">
-                        <div class="card front">
+                    <div class="card-grid word-card text-center">
+                        <div class="front"  style="background-color:pink">
                             <div class="card-body d-flex align-items-center justify-content-center">Computer</div>
                         </div>
-                        <div class="card back ">
+                        <div class="back "  style="background-color:yellow">
                             <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
                         </div>
                     </div>
                     <!--word end -->
                     <!--word-->
-                    <div class="word-card text-center" style="height:16em">
-                        <div class="card front">
+                    <div class="card-grid word-card text-center">
+                        <div class="front"  style="background-color:pink">
                             <div class="card-body  d-flex align-items-center justify-content-center">Computer</div>
                         </div>
-                        <div class="card back">
+                        <div class="back"  style="background-color:yellow">
                             <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
             </div>
             <!--flashcard end-->
 
-            <div class="col-xl-3 col-lg-3">
+            <div class="col-xl-2 col-lg-2">
                 <!--onthers games-->
                 <div class="single_course text-left">
                     <p>Systemy opearcyjne</p>
@@ -177,40 +177,7 @@
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
     
-    <script>
-    $('.owl-carousel').owlCarousel({
-    loop:false,
-    margin:10,
-    nav:true,
-    navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-    ],
-    navContainer: '.nav-container',
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    },
-    onInitialized  : counter, //When the plugin has initialized.
-  onTranslated : counter //When the translation of the stage has finished.
-    });
-
     
-    function counter(event) {
-    var element   = event.target;         // DOM element, in this example .owl-carousel
-    var items     = event.item.count;     // Number of items
-    var item      = event.item.index+1;     // Position of the current item
-  $('.carausel-counter').html(item+"/"+items);
-  $('.progress-bar').css("width",(item)/items*100+'%').fadeIn("slow");
-}
-    </script>
 
 </body>
 </html>
