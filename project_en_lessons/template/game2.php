@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/circle.scss">
+   
 </head>
 <body class="text-center" data-gr-c-s-loaded="true">
 <!--header-->
@@ -85,27 +86,48 @@
             <div class="col-xl-10 col-lg-10">
 
                 <!--grid-->
-                <div class="grid-container">
+                <div class="grid-container d-flex justify-content-between">
                     <!--word-->
-                    <div class="card-grid word-card text-center">
-                        <div class="front"  style="background-color:pink">
-                            <div class="card-body d-flex align-items-center justify-content-center">Computer</div>
+                    <div class="word-card col-sm-3 shadow">
+                        <div class="card front ">
+                            <div class="card-body "></div>
                         </div>
-                        <div class="back "  style="background-color:yellow">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
+                        <div class="card back " data-id="10" >
+                            <div class="card-body ">Komputer</div>
                         </div>
                     </div>
                     <!--word end -->
                     <!--word-->
-                    <div class="card-grid word-card text-center">
-                        <div class="front"  style="background-color:pink">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Computer</div>
+                    <div class="word-card col-sm-3 shadow">
+                        <div class="card front" >
+                            <div class="card-body "></div>
                         </div>
-                        <div class="back"  style="background-color:yellow">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
+                        <div class="card back" data-id="5" >
+                            <div class="card-body ">pliki</div>
                         </div>
                     </div>
-                    <!--word end-->
+                    <!--word end -->
+
+                    <!--word-->
+                    <div class="word-card col-sm-3 shadow">
+                        <div class="card front ">
+                            <div class="card-body "></div>
+                        </div>
+                        <div class="card back" data-id="10" >
+                            <div class="card-body ">Computer</div>
+                        </div>
+                    </div>
+                    <!--word end -->
+                    <!--word-->
+                    <div class="word-card col-sm-3 shadow">
+                        <div class="card front">
+                            <div class="card-body "></div>
+                        </div>
+                        <div class="card back" data-id="5" >
+                            <div class="card-body ">files</div>
+                        </div>
+                    </div>
+                    <!--word end -->
                    
                     
                     
@@ -177,7 +199,39 @@
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
     
+    <script>
+        //effect flip 
+      $(".word-card").flip({
+        axis: 'x',
+        trigger: 'click',
+        reverse: true,
+      });
+      
+        var item = 0;
+        const items = $(".word-card").length;
+      $(".word-card").on('flip:done',function(){
+          $(this).addClass("isshowing");
+          if($(".isshowing").length==2)
+          {
+              if($(".isshowing").eq(0).find(".back").data("id")==$(".isshowing").eq(1).find(".back").data("id"))
+              {
+                $(".isshowing").addClass("animated bounceIn");
+                $(".isshowing").off(".flip");
+                item+=2;
+                $('.progress-bar').css("width",item/items*100+'%').fadeIn("slow");
+              }
+              else
+              {
+                $(".isshowing").flip(false);
+              }
+
+              $(".isshowing").removeClass("isshowing");  
+          }
+
+      });
+
     
+    </script>
 
 </body>
 </html>

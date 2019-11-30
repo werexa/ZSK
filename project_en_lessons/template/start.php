@@ -114,6 +114,13 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="course_nav">
+                    
+                    <!--search-->
+                    <div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                <input type="text" name="search" placeholder="search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
+                    </div>
+                    <!--search end -->
                         <nav>
                             <ul class="nav" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -142,9 +149,9 @@
                 </div>
             </div>
         </div>
-
         <div class="all_courses">
             <div class="container">
+            
                 <div class="tab-content" id="myTabContent">
 
                     <!--displayed carts-->

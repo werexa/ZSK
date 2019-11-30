@@ -24,12 +24,6 @@ if(menu.length){
 		openedSymbol:'-'
   });
   
-    //effect flip 
-      $(".word-card").flip({
-        axis: 'x',
-        trigger: 'click',
-        reverse: true
-      });
 
    
 };
@@ -44,7 +38,6 @@ if(menu.length){
     e.preventDefault();
     var hiidendivs = $(this).closest('.row').find(".col-xl-4:hidden")
     $(hiidendivs).slice(0,3).fadeIn("slow");
-    console.log($(hiidendivs).length);
     if($(this).closest('.row').find(".col-xl-4:hidden").length == 0){
       $(this).fadeOut("slow");
      }

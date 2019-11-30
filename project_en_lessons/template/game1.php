@@ -128,7 +128,7 @@
                     <p><i class="fa  fa-pencil-square-o"></i><a href="#user_words" class=""> Pisanie</a></p>
                     <p><i class="fa  fa-sticky-note-o "></i><a href="#user_words" class=""> Fiszki</a></p>
                     <p><i class="fa  fa-braille"></i><a href="#user_words" class=""> Memorize</a></p>
-                    
+
                 </div>
                 <!--onthoers games-->
                 <!--percentage-->
@@ -178,6 +178,13 @@
     <script src="js/main.js"></script>
     
     <script>
+    //effect flip 
+    $(".word-card").flip({
+        axis: 'x',
+        trigger: 'click',
+        reverse: true,
+      });
+      
     $('.owl-carousel').owlCarousel({
     loop:false,
     margin:10,
