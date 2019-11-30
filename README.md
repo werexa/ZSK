@@ -1,1 +1,1 @@
-# ZSK  hjbhjbhjvhvhjv
+# ZSK  Projekt - strona internetowa do nauki języka technicznego
