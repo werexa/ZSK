@@ -34,7 +34,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img class="img-fluid" src="img/logo.png" alt="">
                                 </a>
                             </div>
@@ -43,15 +43,14 @@
                             <div class="main-menu  d-none d-lg-block">
                             <nav>
                                     <ul id="navigation">
-                                        <li><a  href="index.html">Strona Główna</a></li>
+                                        <li><a href="index.php">Strona Główna</a></li>
                                        <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a href="#">Zestawy</a></li>
-                                        <li><a href="about.html">Teachers</a></li>
-                                        <li><a href="contact.html">Kontakt</a></li>
-                                        <li><a class="active" href="#">Profil <i class="ti-angle-down"></i></a>
+                                        <li><a href="#courses">Zestawy</a></li>
+                                        <li><a href="#adress">Kontakt</a></li>
+                                        <li><a href="profile.php">Profil <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">Ustawienia</a></li>
-                                                <li><a href="single-blog.html">Twoje zestawy</a></li>
+                                                <li><a href="profile.php/#user_settings">Ustawienia</a></li>
+                                                <li><a href="profile.php/#user_words">Twoje slowka</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -146,10 +145,10 @@
                 <div class="single_course text-left">
                     <p>Systemy opearcyjne</p>
                     
-                    <p><i class="fa  fa-file-text"></i><a href="#user_words" class=""> Test</a></p>
-                    <p><i class="fa  fa-pencil-square-o"></i><a href="#user_words" class=""> Pisanie</a></p>
-                    <p><i class="fa  fa-sticky-note-o "></i><a href="#user_words" class=""> Fiszki</a></p>
-                    <p><i class="fa  fa-braille"></i><a href="#user_words" class=""> Memorize</a></p>
+                    <p><i class="fa  fa-file-text"></i><a href="#" class=""> Test</a></p>
+                    <p><i class="fa  fa-pencil-square-o"></i><a href="#" class=""> Pisanie</a></p>
+                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php" class=""> Fiszki</a></p>
+                    <p><i class="fa  fa-braille"></i><a href="game2.php" class=""> Memorize</a></p>
                     
                 </div>
                 <!--onthoers games-->
@@ -206,7 +205,7 @@
         trigger: 'click',
         reverse: true,
       });
-      
+
         var item = 0;
         const items = $(".word-card").length;
       $(".word-card").on('flip:done',function(){

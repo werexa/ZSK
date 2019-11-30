@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <?php 
+    require_once("../hooks/bootstrap_4.php");
+    ?> 
 </head>
 <body class="text-center" data-gr-c-s-loaded="true">
 <!--header-->
@@ -39,26 +41,19 @@
                         </div>
                         <div class="col-xl-7 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a  href="index.html">Strona Główna</a></li>
-                                       <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a class="active" href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="course_details.html">course details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a  href="index.php">Strona Główna</a></li>
+                                    <li><a href="#courses">Zestawy</a></li>
+                                    <li><a href="#adress">Kontakt</a></li>
+                                    <li><a class="active" href="profile.php">Profil <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="profile.php/#user_settings">Ustawienia</a></li>
+                                            <li><a href="profile.php/#user_words">Twoje slowka</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
@@ -128,13 +123,13 @@
                                         <div class="card-header" id="headingTwo">
                                             <h5 class="mb-0">
                                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    <i class="flaticon-question"></i>Fiszki
+                                                    <i class="fa fa-sticky-note-o"></i>Fiszki
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div class="card-body">
-                                               <img src="" alt="">
+                                               <a href="game1.php"><img class="img-fluid" src="img/fiszki.jpg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -142,13 +137,13 @@
                                         <div class="card-header" id="headingOne">
                                             <h5 class="mb-0">
                                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                    <i class="flaticon-question"></i>Pisanie</span>
+                                                    <i class="fa fa-braille"></i>Memory</span>
                                                 </button>
                                             </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
                                             <div class="card-body">
-                                                <img src="" alt="">
+                                                <img class="img-fluid" src="img/memory.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +151,7 @@
                                         <div class="card-header" id="headingThree">
                                             <h5 class="mb-0">
                                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    <i class="flaticon-question"></i>Test
+                                                    <i class="fa fa-pencil-square-o"></i>Test
                                                 </button>
                                             </h5>
                                         </div>

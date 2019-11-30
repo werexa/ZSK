@@ -35,7 +35,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img class="img-fluid" src="img/logo.png" alt="">
                                 </a>
                             </div>
@@ -44,15 +44,14 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">Strona Główna</a></li>
+                                        <li><a class="active" href="index.php">Strona Główna</a></li>
                                        <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a href="#">Zestawy</a></li>
-                                        <li><a href="about.html">Teachers</a></li>
-                                        <li><a href="contact.html">Kontakt</a></li>
-                                        <li><a href="#">Profil <i class="ti-angle-down"></i></a>
+                                        <li><a href="#courses">Zestawy</a></li>
+                                        <li><a href="#adress">Kontakt</a></li>
+                                        <li><a href="profile.php">Profil <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">Ustawienia</a></li>
-                                                <li><a href="single-blog.html">Twoje zestawy</a></li>
+                                                <li><a href="profile.php/#user_settings">Ustawienia</a></li>
+                                                <li><a href="profile.php/#user_words">Twoje slowka</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -101,7 +100,7 @@
     <!-- slider_area_end -->
 
  <!-- popular_courses_start -->
- <div class="popular_courses">
+ <div class="popular_courses" id="courses">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -160,13 +159,13 @@
                                     <div class="col-xl-4 col-lg-4 ">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="#">
+                                                <a href="test.php">
                                                     <img src="img/courses/1.png" alt="">
                                                 </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>Systemy operacyjne</span>
-                                                <h3><a href="#">Operating Systems</a></h3>
+                                                <h3><a href="test.php">Operating Systems</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
@@ -185,13 +184,13 @@
                                     <div class="col-xl-4 col-lg-4 ">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="#">
+                                                <a href="test.php">
                                                     <img src="img/courses/2.png" alt="">
                                                 </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>Sieci komputerowe</span>
-                                                <h3><a href="#">Computer Networking</a></h3>
+                                                <h3><a href="test.php">Computer Networking</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
@@ -210,13 +209,13 @@
                                     <div class="col-xl-4 col-lg-4 ">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="#">
+                                                <a href="test.php">
                                                     <img src="img/courses/3.png" alt="">
                                                 </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>Urządzenia komputerowe</span>
-                                                <h3><a href="#">Computer Technology Devices</a></h3>
+                                                <h3><a href="test.php">Computer Technology Devices</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
@@ -441,7 +440,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
+                            <h3 class="footer_title" id="adress">
                                 Adres
                             </h3>
                             <p>
