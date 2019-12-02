@@ -9,15 +9,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <!-- CSS here -->
+      <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
+    <!--<link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/gijgo.css">-->
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
@@ -60,7 +60,7 @@
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-center">
                                 <a href="#test-form" class="login popup-with-form">
-                                    <i class="flaticon-user"></i>
+                                    <i class="fa fa-user"></i>
                                     <span>log in</span>
                                 </a>
                             </div>
@@ -167,28 +167,28 @@
         </div>
     </div>
 </div>
-    
     <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script> <!--sprawdzanie czy są nowe technologie-->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
+    <!--<script src="js/popper.min.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script> <!--karuzela/ slider-->
+    <script src="js/isotope.pkgd.min.js"></script><!--do filtorwania elementow-->
     <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
+    <!--<script src="js/waypoints.min.js"></script>-->
+    <script src="js/jquery.counterup.min.js"></script><!--animacja do liczb-->
+    <script src="js/imagesloaded.pkgd.min.js"></script><!--loading do obrazkow-->
+    <script src="js/scrollIt.js"></script><!--do płynnego scrollowania-->
     <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <!--<script src="js/wow.min.js"></script>-->
+    <!--<script src="js/nice-select.min.js"></script>-->
+    <script src="js/jquery.slicknav.min.js"></script><!-- do zmiany menu na mobilny-->
+    <script src="js/jquery.magnific-popup.min.js"></script><!--popup do loginu-->
+    <script src="js/plugins.js"></script><!-- dodatkowe klasy do jquery-->
+   <!-- <script src="js/gijgo.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>-->
     <script src="js/jquery.flip.js"></script>
+    
     
         <!--contact js-->
      <script src="js/contact.js"></script>
