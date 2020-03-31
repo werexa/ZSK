@@ -97,7 +97,7 @@ $category =  $mysql->getCategory($categoryid);
                                         </div>
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                             <div class="card-body">
-                                            <a href="game3.php?<?php echo "category=$categoryid" ?>"><img src="" alt=""></a>
+                                            <a href="game3.php?<?php echo "category=$categoryid" ?>"><img class="img-fluid" src="img/test.jpg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
