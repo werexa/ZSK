@@ -25,6 +25,7 @@
                                             <ul class="submenu nav ">
                                                 <li class="nav-item"><a class="nav-link" href="profile.php#user_settings">Ustawienia</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="profile.php#user_words">Twoje slowka</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="addWord.php">Dodaj słówko</a></li>
                                             </ul>
                                         </li>
                                         <?php endif;?>

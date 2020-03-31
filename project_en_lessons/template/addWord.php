@@ -85,7 +85,13 @@
                 <div class="col-xl-12 col-lg-12" >
                 
                 <div class="row d-flex justify-content-between word-content" >
-                        <?php require_once("wordcontent.php")?>
+                        <?php 
+                        $user = $_SESSION['User']['user_id'];
+
+                        $mysql = new Devalien();
+
+                        $words = $mysql->getUserWords($user);
+                        require_once("wordcontent.php")?>
                         </div>
                 </div>
 

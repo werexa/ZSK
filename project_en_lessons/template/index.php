@@ -54,7 +54,7 @@ if(isset($_POST['register']) && !empty($_POST['registeremail']) && !empty($_POST
                         <div class="slider_info">
                             <h3>DevAlien<br>
                             nauka języka<br></h3>
-                            <a href="#" class="boxed_btn">Wybierz zestaw</a>
+                            <?php if(isset($_SESSION["User"]["user_id"])):?> <a href="addWord.php" class="boxed_btn">Dodaj słówka</a> <?php endif;?>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ class Devalien{
     }
 
 
+    //połączenie z bazą
     function connect()
     {
     //Łączenie z bazą danych
@@ -34,19 +35,26 @@ class Devalien{
     //end Łączenie z bazą danych
     }
 
+    //pobranie wszystkich categorii z danymi
     public function getCategories(){
         $categories = $this->mysql->query("SELECT category_id, category_name, category_en FROM dev_categories");
         return $categories;
     }
 
+    //pobranie pakietów danego usera
+    //userid int 
     public function getUserPackages($userid){
         return $this->mysql->query("SELECT `pack_id`,`pack_name` FROM `dev_word_packages` where `pack_author` = $userid");
     }
+
+    //pobranie danych danej kategorii 
     public function getCategory($categoryid)
     {
-        return $this->mysql->query("SELECT category_name, category_en  FROM dev_categories WHERE category_id = $categoryid")->fetch_row();
+        return ($this->mysql->query("SELECT category_name, category_en  FROM dev_categories WHERE category_id = $categoryid"))->fetch_row();
     }
 
+    //pobranie słówkej stworzone przed danego usera
+    // userid int 
     public function getUserWords($userid)
     {
         return $this->mysql->query("SELECT e.word_en wen, p.word_pl epl, w.word_lvl elvl, c.category_name cn, pc.pack_name pn
@@ -62,6 +70,8 @@ class Devalien{
                         WHERE pc.pack_author = $userid");
     }
 
+    //pobranie randomowej list słówek danej kategorii z limitem 
+    // category int 
     public function getRandUnionCategoryWords($category)
     {
         return $this->mysql->query("SELECT w.`word_en_id` id , pl.word_pl word
@@ -78,6 +88,8 @@ class Devalien{
                             ORDER by Rand() limit 20");
     }
     
+    //pobranie listy randowmowych słówek z danej kategorii 
+    // category int 
     public function getRandCategoryWords($category,$limit = "")
     {
         if($limit!== "")
@@ -97,19 +109,52 @@ class Devalien{
         ORDER BY RAND() $limit");
     }
 
+    //pobranie listy ulubionych słówek danego usera 
+    // user  int 
    public function getUserFavorite($user)
    {
       return $this->mysql->query("SELECT word_en_id FROM dev_users_favorite where dev_user_id = $user");
    }
+
+   // pobranie  listy ulubionych słówek danego usera z wszytkimi danymi
+    // user  int 
+   public function getUserFavoriteAll($user)
+   {
+      return $this->mysql->query("SELECT e.word_en wen, p.word_pl epl, w.word_lvl elvl, c.category_name cn, pc.pack_name pn
+      FROM `dev_words` w 
+      inner join dev_word_pl p  
+      on p.word_id = w.word_pl_id 
+      inner join dev_word_en e 
+      on e.word_id = w.`word_en_id`
+      inner join dev_word_packages pc
+      on pc.pack_id = w.pack_id
+      inner join dev_categories c 
+      on c.category_id = w.word_category
+      WHERE pc.pack_author = $user and w.word_en_id in (SELECT word_en_id FROM dev_users_favorite where dev_user_id = $user )");
+   }
+
+   
 
   /* public function checkIfExistFavorite($user,$wordid)
    {
         return $this->mysql->query("SELECT 1 FROM dev_users_favorite where dev_user_id = $user and where word_en_id = $wordid")->fetch_row();
    }*/
 
+   //zapisanie ulubionych słówkek 
    public function insertUserFavorite($user,$wordid)
    {
         return $this->mysql->query("INSERT INTO dev_users_favorite(dev_user_id,word_en_id) SELECT $user, $wordid WHERE NOT EXISTS ( SELECT * FROM dev_users_favorite where dev_user_id = $user and word_en_id = $wordid )");
+   }
+
+   // zapisanie nauczonych słówek 
+   public function insertUserLearned($user,$data)
+   {
+        $sql = [];
+        foreach ($data as $key => $value) {
+            $sql[$key] = "($user,$value)";
+        }
+        $newsql =  implode(",",$sql);
+        return $this->mysql->query("INSERT INTO dev_user_learned VALUES $newsql ");
    }
 }
 

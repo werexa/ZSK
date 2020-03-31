@@ -1,10 +1,10 @@
 <?php
 session_start();
-$category = $_GET["category"];
+$categoryid = $_GET["category"];
 require_once("connection.php");
 $mysql = new Devalien();
-$words = $mysql->getRandCategoryWords($category);
-$category = $mysql->getCategory($category);
+$words = $mysql->getRandCategoryWords($categoryid);
+$category = $mysql->getCategory($categoryid);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,10 +63,9 @@ $category = $mysql->getCategory($category);
                 <div class="single_course text-left">
                     <p><?php echo $category[0]?></p>
                     
-                    <p><i class="fa  fa-file-text"></i><a href="#user_words" class=""> Test</a></p>
-                    <p><i class="fa  fa-pencil-square-o"></i><a href="#user_words" class=""> Pisanie</a></p>
-                    <p><i class="fa  fa-sticky-note-o "></i><a href="#user_words" class=""> Fiszki</a></p>
-                    <p><i class="fa  fa-braille"></i><a href="#user_words" class=""> Memorize</a></p>
+                    <p><i class="fa  fa-file-text"></i><a href="game3.php?category=<?php echo $categoryid?>" class=""> Test</a></p>
+                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php?category=<?php echo $categoryid?>" class=""> Fiszki</a></p>
+                    <p><i class="fa  fa-braille"></i><a href="game2.php?category=<?php echo $categoryid?>" class=""> Memorize</a></p>
 
                 </div>
                 <!--onthoers games-->
@@ -188,12 +187,23 @@ require_once("jsbeforebodyclosingtag.php") ?>
             var len = $(".owl-item").length;
             if($(".owl-item").eq(len-1).hasClass("active"))
             {
-                setTimeout(function(){checkInput()}, 3000);
+                setTimeout(function(){checkInput()}, 1000);
                 console.log("tak");
                 
             }
             
-       })
+       });
+       $("input[name='save']").on("click",function(){
+        var toSave= [];
+            $("input[name='wordenid[]']").each(function(i,el){
+                toSave.push($(el).val());
+        });
+        var data = JSON.stringify(toSave);
+        $.post("insertlearned.php",{userwords: data},function(res){
+        console.log(res);
+        })
+       
+    });
     <?php endif;?>
     </script>
 

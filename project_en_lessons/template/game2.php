@@ -1,12 +1,12 @@
 <?php
 if(!empty($_GET['category'])):
+session_start();
 
-
-$category = $_GET["category"];
+$categoryid = $_GET["category"];
 require_once("connection.php");
 $mysql = new Devalien();
-$result = $mysql->getRandUnionCategoryWords($category);
-$category = $mysql->getCategory($category);
+$result = $mysql->getRandUnionCategoryWords($categoryid);
+$category = $mysql->getCategory($categoryid);
 
 ?>
 
@@ -19,7 +19,7 @@ $category = $mysql->getCategory($category);
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12" >
-                    <h2 class="text-left title mx-2"><?php echo $category["category_name"]?></h2>
+                    <h2 class="text-left title mx-2"><?php echo $category[0]?></h2>
                 </div>
             <!--memorize-->
             <div class="col-xl-10 col-lg-10">
@@ -57,10 +57,9 @@ $category = $mysql->getCategory($category);
                 <div class="single_course text-left">
                     <p>Systemy opearcyjne</p>
                     
-                    <p><i class="fa  fa-file-text"></i><a href="game3.php" class=""> Test</a></p>
-                    <p><i class="fa  fa-pencil-square-o"></i><a href="#" class=""> Pisanie</a></p>
-                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php" class=""> Fiszki</a></p>
-                    <p><i class="fa  fa-braille"></i><a href="#" class=""> Memorize</a></p>
+                    <p><i class="fa  fa-file-text"></i><a href="game3.php?category=<?php echo $categoryid?>" class=""> Test</a></p>
+                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php?category=<?php echo $categoryid?>" class=""> Fiszki</a></p>
+                    <p><i class="fa  fa-braille"></i><a href="game2.php?category=<?php echo $categoryid?>" class=""> Memorize</a></p>
                     
                 </div>
                 <!--onthoers games-->
@@ -72,6 +71,9 @@ $category = $mysql->getCategory($category);
                             </div>
                         </div>
                         <!--percentage-->
+                <?php if(isset($_SESSION["User"]["user_id"])):?>
+                <input type="button" name="save" class="btn btn-primary my-2" disabled="true" value="Zapisz zaliczone">
+                <?php endif;?>
             </div>
 
            
@@ -93,6 +95,18 @@ require_once("jsbeforebodyclosingtag.php") ?>
         reverse: true,
       });
 
+      function checkInput()
+        {
+            var width = $(".progress-bar").css("width");
+            var widthparent = $(".progress-bar").parent().css("width");
+            if(width == widthparent)
+            {
+                $("input[name='save']").attr("disabled",false);
+            }
+            
+        }
+
+
         var item = 0;
         const items = $(".word-card").length;
       $(".word-card").on('flip:done',function(){
@@ -105,6 +119,10 @@ require_once("jsbeforebodyclosingtag.php") ?>
                 $(".isshowing").off(".flip");
                 item+=2;
                 $('.progress-bar').css("width",item/items*100+'%').fadeIn("slow");
+                if($(".bounceIn").length == items)
+                {
+                    setTimeout(function(){checkInput()}, 1000);   
+                }
               }
               else
               {
@@ -115,6 +133,22 @@ require_once("jsbeforebodyclosingtag.php") ?>
           }
 
       });
+
+    
+    $("input[name='save']").on("click",function(){
+        var toSave= [];
+            $(".back").each(function(i,el){
+                toSave.push($(el).data("id"));
+        });
+        toSave = Array.from(new Set(toSave));
+        var data = JSON.stringify(toSave);
+        $.post("insertlearned.php",{userwords: data},function(res){
+        console.log(res);
+        })
+       
+    })
+      
+      
 
     
     </script>

@@ -1,13 +1,5 @@
 
 <?php 
-require_once("connection.php");
-
-$user = $_SESSION['User']['user_id'];
-
-$mysql = new Devalien();
-
-$words = $mysql->getUserWords($user);
-
 
 foreach ($words as $key => $value) {
    echo '<!--word-->

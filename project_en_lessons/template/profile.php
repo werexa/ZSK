@@ -1,9 +1,10 @@
 <?php 
 session_start();
 if(isset($_SESSION["User"]["user_name"])):
+    $user = $_SESSION["User"]["user_id"];
     require_once("connection.php");
-    $dev = new Devalien;
-    var_dump($dev->getCategories());
+    $mysql = new Devalien();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,12 +139,31 @@ if(isset($_SESSION["User"]["user_name"])):
                         </div>
                     </div>
                     <!--title for words-->
+                    <?php 
                     
+                    $words = $mysql->getUserFavoriteAll($user);
+                    
+                    require("wordcontent.php") ?>
 
                     <!-- favorite words-->
                     
 
                     <!--favorite wordsend-->
+
+                      <!--title for words-->
+                      <div class="col-xl-12 border-top mt-5 my-2">
+                        <div class="section_title text-center mt-5">
+                            <h3 id="user_words">Twoje stworzone słówka</h3>
+                        </div>
+                    </div>
+
+                    <!--title for words-->
+                    <?php 
+                    
+                    $words = $mysql->getUserWords($user);
+                    require("wordcontent.php") ?>
+
+                    <a href="addWord.php" class="boxed_btn">Dodaj słówka</a>
                 </div>
             </div>
         </div>

@@ -56,10 +56,9 @@ $words = $mysql->getRandCategoryWords($category,10);
                 <div class="single_course text-left">
                     <p>Systemy opearcyjne</p>
                     
-                    <p><i class="fa  fa-file-text"></i><a href="#" class=""> Test</a></p>
-                    <p><i class="fa  fa-pencil-square-o"></i><a href="#" class=""> Pisanie</a></p>
-                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php" class=""> Fiszki</a></p>
-                    <p><i class="fa  fa-braille"></i><a href="game2.php" class=""> Memorize</a></p>
+                    <p><i class="fa  fa-file-text"></i><a href="game3.php?category=<?php echo $category?>" class=""> Test</a></p>
+                    <p><i class="fa  fa-sticky-note-o "></i><a href="game1.php?category=<?php echo $category?>" class=""> Fiszki</a></p>
+                    <p><i class="fa  fa-braille"></i><a href="game2.php?category=<?php echo $category?>" class=""> Memorize</a></p>
                     
                 </div>
                 <!--onthoers games-->
@@ -131,11 +130,11 @@ $("input[name='save']").on("click",function(){
     var toSave = {};
     $(".is-valid").each(function(i,el)
     {
-        toSave[$(el).data("value")] = $(el).val();
+        toSave[i] = $(el).data("value");
     })
 
     var data = JSON.stringify(toSave);
-    $.post("userwords.php",{userwords: data},function(res){
+    $.post("insertlearned.php",{userwords: data},function(res){
         console.log(res);
     })
 })
