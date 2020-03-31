@@ -1,111 +1,51 @@
+<?php
+session_start();
+$category = $_GET["category"];
+require_once("connection.php");
+$mysql = new Devalien();
+$words = $mysql->getRandCategoryWords($category);
+$category = $mysql->getCategory($category);
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DevAlien</title>
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-      <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <!--<link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/gijgo.css">-->
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/circle.css">
-    <link rel="stylesheet" href="css/circle.scss">
-</head>
+<?php require_once("head.php")?>
 <body class="text-center" data-gr-c-s-loaded="true">
 <!--header-->
-<header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area" style="background: linear-gradient(to right,#34bec8 0%, #f4367d 100%);">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="index.php">
-                                    <img class="img-fluid" src="img/logo.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7">
-                            <div class="main-menu  d-none d-lg-block">
-                            <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.php">Strona Główna</a></li>
-                                       <!-- <li><a href="Courses.html">Zestawy</a></li>-->
-                                        <li><a href="#courses">Zestawy</a></li>
-                                        <li><a href="#adress">Kontakt</a></li>
-                                        <li><a href="profile.php">Profil <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="profile.php/#user_settings">Ustawienia</a></li>
-                                                <li><a href="profile.php/#user_words">Twoje slowka</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="log_chat_area d-flex align-items-center">
-                                <a href="#test-form" class="login popup-with-form">
-                                    <i class="fa fa-user"></i>
-                                    <span>log in</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>       
-</header>
+<?php require_once("header.php"); ?>
 <!-- header-end -->
 
     <div class="courses_details_info">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
-                    <h2 class="text-left title">Operating Systems</h2>
+                    <h2 class="text-left title"><?php echo $category[0]?></h2>
                 </div>
             <!--flashcards-->
             <div class="col-xl-6 col-lg-6">
 
                 <!--carousel-->
                 <div class="owl-carousel">
+
+               
                     <!--word-->
-                    <div class="word-card text-center" style="height:16em;">
+                    <?php foreach($words as $key => $value) {
+                        # code...
+                       
+                   
+                   echo '<div class="word-card text-center" style="height:16em;">
                         <div class="card front">
-                            <div class="card-body d-flex align-items-center justify-content-center">Computer</div>
+                            <div class="card-body d-flex align-items-center justify-content-center">'.$value['word_pl'].'</div>
                         </div>
                         <div class="card back ">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                            <input name="wordenid[]" type="hidden" value="'.$value["word_en_id"].'">
+                            '.$value['word_en'].'</div>
                         </div>
-                    </div>
-                    <!--word end -->
-                    <!--word-->
-                    <div class="word-card text-center" style="height:16em">
-                        <div class="card front">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Computer</div>
-                        </div>
-                        <div class="card back">
-                            <div class="card-body  d-flex align-items-center justify-content-center">Komputer</div>
-                        </div>
-                    </div>
-                    <!--word end-->
-                   
+                        </div>';
+                    
+                    }
+                    //?>
+                   <!--word end -->
                     
                     
 
@@ -121,7 +61,7 @@
             <div class="col-xl-3 col-lg-3">
                 <!--onthers games-->
                 <div class="single_course text-left">
-                    <p>Systemy opearcyjne</p>
+                    <p><?php echo $category[0]?></p>
                     
                     <p><i class="fa  fa-file-text"></i><a href="#user_words" class=""> Test</a></p>
                     <p><i class="fa  fa-pencil-square-o"></i><a href="#user_words" class=""> Pisanie</a></p>
@@ -132,12 +72,17 @@
                 <!--onthoers games-->
                 <!--percentage-->
                 <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 0%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
+                    <div class="progress">
+                        <div class="progress-bar color-1" role="progressbar" style="width: 0%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         </div>
-                        <!--percentage-->
+                    </div>
+                </div>
+                 <!--percentage-->
+
+                <?php if(isset($_SESSION["User"]["user_id"])):?>
+                <input type="button" name="save" class="btn btn-primary my-2" disabled="" value="Zapisz zaliczone">
+                <?php endif;?>
+                       
             </div>
 
            
@@ -146,43 +91,22 @@
     </div>
 </div>
     
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script> <!--sprawdzanie czy są nowe technologie-->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <!--<script src="js/popper.min.js"></script> -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script> <!--karuzela/ slider-->
-    <script src="js/isotope.pkgd.min.js"></script><!--do filtorwania elementow-->
-    <script src="js/ajax-form.js"></script>
-    <!--<script src="js/waypoints.min.js"></script>-->
-    <script src="js/jquery.counterup.min.js"></script><!--animacja do liczb-->
-    <script src="js/imagesloaded.pkgd.min.js"></script><!--loading do obrazkow-->
-    <script src="js/scrollIt.js"></script><!--do płynnego scrollowania-->
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <!--<script src="js/wow.min.js"></script>-->
-    <!--<script src="js/nice-select.min.js"></script>-->
-    <script src="js/jquery.slicknav.min.js"></script><!-- do zmiany menu na mobilny-->
-    <script src="js/jquery.magnific-popup.min.js"></script><!--popup do loginu-->
-    <script src="js/plugins.js"></script><!-- dodatkowe klasy do jquery-->
-   <!-- <script src="js/gijgo.min.js"></script>
-    <script src="js/jquery-2.1.4.min.js"></script>-->
-    <script src="js/jquery.flip.js"></script>
-    
-        <!--contact js-->
-     <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/main.js"></script>
+<?php 
+require_once("footer.php");
+include_once('forms.php');
+require_once("../hooks/boostrap_4_js.php");
+require_once("jsbeforebodyclosingtag.php") ?>
     
     <script>
+
+                    
     //effect flip 
     $(".word-card").flip({
         axis: 'x',
         trigger: 'click',
         reverse: true,
       });
+    
 
     $('.owl-carousel').owlCarousel({
     loop:false,
@@ -205,7 +129,7 @@
         }
     },
     onInitialized  : counter, //When the plugin has initialized.
-  onTranslated : counter //When the translation of the stage has finished.
+    onTranslated : counter //When the translation of the stage has finished.
     });
 
     
@@ -216,6 +140,61 @@
   $('.carausel-counter').html(item+"/"+items);
   $('.progress-bar').css("width",(item)/items*100+'%').fadeIn("slow");
 }
+
+    <?php if(isset($_SESSION["User"]["user_id"])):?>
+        $(".word-card").after('<i aria-hidden="true" style="backface-visibility: hidden;float: right;padding:20px;color:red;" class="fa fa-heart-o text-right dev-heart"></i>');
+
+        var favorite = <?php $result = $mysql->getUserFavorite($_SESSION["User"]["user_id"]);
+            $favorite = [];
+            foreach ($result as $key => $value) {
+                $favorite[$key] = $value['word_en_id'];
+            }
+            echo json_encode($favorite);
+        ?>;
+        $(".dev-heart").each(function(el,l){
+            var parent = $(l).parent().children()[0];
+            var id = $(parent).find("input[type='hidden']").val();
+            if(favorite.includes(id))
+            {
+                $(l).addClass("fa-heart").removeClass("fa-heart-o")   
+            }
+        })
+        //favorite = JSON.parse(favorite);
+      
+
+        $(".fa-heart-o").on("click",function(){
+        var parent = $(this).parent().children()[0];
+        var id = $(parent).find("input[type='hidden']").val();
+        $.post("favoritewords.php",{wordid: id},function(r){
+            $(this).addClass("fa-heart");
+            $(this).removeCLass("fa-heart-o");
+            })
+        })
+
+        function checkInput()
+        {
+            var width = $(".progress-bar").css("width");
+            var widthparent = $(".progress-bar").parent().css("width");
+            if(width == widthparent)
+            {
+                $("input[name='save']").attr("disabled",false);
+            }
+            
+        }
+        
+       $(".owl-next").on("click",function(){
+
+            //if($(this).attr("disabled"))
+            var len = $(".owl-item").length;
+            if($(".owl-item").eq(len-1).hasClass("active"))
+            {
+                setTimeout(function(){checkInput()}, 3000);
+                console.log("tak");
+                
+            }
+            
+       })
+    <?php endif;?>
     </script>
 
 </body>

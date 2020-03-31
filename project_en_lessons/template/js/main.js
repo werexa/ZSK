@@ -108,7 +108,7 @@ autoplaySpeed: 800,
 	});
   
   // wow js
-  new WOW().init();
+  //new WOW().init();
 
   // counter 
   $('.counter').counterUp({
